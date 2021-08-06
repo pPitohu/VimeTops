@@ -174,6 +174,7 @@ h6,
 .madeby {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
+    margin-top: 0.25rem;
 }
 
 .madewith i {
@@ -315,4 +316,53 @@ li i {
 }
 .close-jq-toast-single {
     font-size: 1.2rem !important;
+}
+@media screen and (max-width: 996px) {
+    h1 span:first-child {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .navbar > .col-md-6 {
+        width: 85%;
+        padding-left: 0;
+    }
+    .navbar > .col-md-1 {
+        width: 15%;
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 450px) {
+    .madeby {
+        text-align: center;
+        flex-direction: column;
+    }
+    .madeby div:first-child {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem !important;
+        border-bottom: 1px solid var(--ggray);
+    }
+    .loader i,
+    .notExist i {
+        font-size: 6rem;
+    }
+    .loader div,
+    .notExist div {
+        font-size: 1rem;
+    }
+    .topsExist h3 {
+        font-size: 1.5rem;
+    }
+    .more {
+        font-size: 1rem;
+        text-align: right;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+    .total h5 {
+        font-size: 1rem;
+    }
+    ul {
+        margin-left: 0;
+    }
 }

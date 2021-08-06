@@ -4,7 +4,8 @@ const input = document.querySelector('.form-control'),
     loader = document.querySelector('.loader'),
     userInfo = document.querySelector('.user-info'),
     notExist = document.querySelector('.notExist'),
-    exist = document.querySelector('.exist');
+    exist = document.querySelector('.exist'),
+    madeby = document.querySelector('.madeby');
 
 ScrollReveal().reveal('.first', { delay: 50 });
 ScrollReveal().reveal('.second', { delay: 200 });
@@ -395,3 +396,32 @@ async function getTop(response) {
         exist.style.display = 'none';
     }
 }
+
+window.onresize = () => {
+    let width = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+    );
+    let height = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+    );
+    if (height < 1000) {
+        madeby.classList.remove('fixed-bottom');
+    } else {
+        if (!madeby.classList.contains('fixed-bottom'))
+            madeby.classList.add('fixed-bottom');
+    }
+    if (width < 1200) {
+        document.querySelector('.navbar > .col-md-6').classList.remove('mr-10');
+    } else {
+        if (
+            !document
+                .querySelector('.navbar > .col-md-6')
+                .classList.contains('mr-10')
+        )
+            document
+                .querySelector('.navbar > .col-md-6')
+                .classList.add('mr-10');
+    }
+};
