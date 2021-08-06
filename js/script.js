@@ -400,11 +400,7 @@ let width = Math.max(
     document.documentElement.clientWidth,
     window.innerWidth || 0
 );
-let height = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight || 0
-);
-if (height < 1000) {
+if (window.outerHeight < 1000) {
     madeby.classList.remove('fixed-bottom');
 } else {
     if (!madeby.classList.contains('fixed-bottom'))
@@ -425,11 +421,7 @@ window.onresize = () => {
         document.documentElement.clientWidth,
         window.innerWidth || 0
     );
-    let height = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0
-    );
-    if (height < 1000) {
+    if (window.outerHeight < 1000) {
         madeby.classList.remove('fixed-bottom');
     } else {
         if (!madeby.classList.contains('fixed-bottom'))
