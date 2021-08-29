@@ -7,10 +7,6 @@ const input = document.querySelector('.form-control'),
     exist = document.querySelector('.exist'),
     madeby = document.querySelector('.madeby');
 
-ScrollReveal().reveal('.first', { delay: 50 });
-ScrollReveal().reveal('.second', { delay: 200 });
-ScrollReveal().reveal('.madeby', { delay: 400 });
-
 input.addEventListener('keypress', (event) => {
     if (event.code === 'Enter') getPlayer();
 });
@@ -356,6 +352,14 @@ async function getTop(response) {
         luckywars: {
             wins: 'Топ <span style="color: var(--indigo);">LuckyWars</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">LuckyWars</span> по убийствам',
+        },
+        speedbuilders: {
+            wins: 'Топ <span style="color: var(--indigo);">Speed Builders</span> по победам',
+        },
+        hide: {
+            total_wins:
+                'Топ <span style="color: var(--indigo);">Hide And Seek</span> по победам',
+            kills: 'Топ <span style="color: var(--indigo);">Hide And Seek</span> по убийствам',
         },
     };
 
