@@ -361,6 +361,10 @@ async function getTop(response) {
                 'Топ <span style="color: var(--indigo);">Hide And Seek</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">Hide And Seek</span> по убийствам',
         },
+        teamfortress: {
+            wins: 'Топ <span style="color: var(--indigo);">Team Fortress</span> по победам',
+            kills: 'Топ <span style="color: var(--indigo);">Team Fortress</span> по убийствам',
+        },
     };
 
     if (response.leaderboards.length !== 0) {
