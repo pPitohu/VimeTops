@@ -17,7 +17,7 @@ search.onclick = () => {
 
 const get = (key) => localStorage.getItem(key);
 
-(function () {
+(function() {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
     } else {
@@ -47,10 +47,10 @@ function getPlayer() {
     let url =
         'https://api.vimeworld.ru/user/name/' + input.value + '/leaderboards';
 
-    fetch(url).then(function (response) {
+    fetch(url).then(function(response) {
         let contentType = response.headers.get('content-type');
         if (contentType && contentType.indexOf('application/json') !== -1) {
-            return response.json().then(function (data) {
+            return response.json().then(function(data) {
                 if (!data.error) {
                     document.querySelector('#id').innerHTML = data.user.id;
                     getInfo(
@@ -113,22 +113,24 @@ function getGuild(guild) {
         elementg.style.visibility = 'visible';
     }
     guild
-        ? document
-              .querySelector('#name')
-              .setAttribute('href', `https://vimetop.ru/guild/${guild.id}`)
-        : '';
-    document.querySelector('#name').innerHTML = guild
-        ? guild.name
-        : 'Без гильдии';
+        ?
+        document
+        .querySelector('#name')
+        .setAttribute('href', `https://vimetop.ru/guild/${guild.id}`) :
+        '';
+    document.querySelector('#name').innerHTML = guild ?
+        guild.name :
+        'Без гильдии';
     var gavatar = document.querySelector('#avatar_url');
     guild
-        ? guild.avatar_url
-            ? gavatar.setAttribute('src', guild.avatar_url)
-            : gavatar.setAttribute(
-                  'src',
-                  'https://vimeworld.ru/images/guild.png'
-              )
-        : '';
+        ?
+        guild.avatar_url ?
+        gavatar.setAttribute('src', guild.avatar_url) :
+        gavatar.setAttribute(
+            'src',
+            'https://vimeworld.ru/images/guild.png'
+        ) :
+        '';
     gavatar.style.width = '32px';
     gavatar.style.height = '32px';
 }
@@ -181,7 +183,7 @@ function Skin(username) {
     var cppppp = 'url(https://skin.vimeworld.ru/raw/cape/' + username + '.png)';
     var img = new Image();
     img.src = 'https://skin.vimeworld.ru/raw/cape/' + username + '.png';
-    img.onload = function () {
+    img.onload = function() {
         var width = this.width;
         var height = this.height;
         if (width == 64 && height == 32) {
@@ -227,8 +229,7 @@ async function getTop(response) {
         bw: {
             wins: 'Топ <span style="color: var(--indigo);">BedWars</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">BedWars</span> по убийствам',
-            bedBreaked:
-                'Топ <span style="color: var(--indigo);">BedWars</span> по сломанным кроватям',
+            bedBreaked: 'Топ <span style="color: var(--indigo);">BedWars</span> по сломанным кроватям',
         },
         bw_monthly: {
             wins: 'Топ <span style="color: var(--indigo);">BedWars Season</span> по победам',
@@ -249,15 +250,12 @@ async function getTop(response) {
             wins: 'Топ <span style="color: var(--indigo);">DeathRun Season</span> по победам',
         },
         duels: {
-            total_wins:
-                'Топ <span style="color: var(--indigo);">Duels</span> по победам',
-            total_games:
-                'Топ <span style="color: var(--indigo);">Duels</span> по играм',
+            total_wins: 'Топ <span style="color: var(--indigo);">Duels</span> по победам',
+            total_games: 'Топ <span style="color: var(--indigo);">Duels</span> по играм',
         },
         duels_monthly: {
             rate: 'Топ <span style="color: var(--indigo);">Duels Season</span> по рейтингу',
-            total_wins:
-                'Топ <span style="color: var(--indigo);">Duels Season</span> по победам',
+            total_wins: 'Топ <span style="color: var(--indigo);">Duels Season</span> по победам',
         },
         gg: {
             wins: 'Топ <span style="color: var(--indigo);">GunGame</span> по победам',
@@ -287,16 +285,13 @@ async function getTop(response) {
             wins: 'Топ <span style="color: var(--indigo);">MobWars Season</span> по победам',
         },
         prison: {
-            total_blocks:
-                'Топ <span style="color: var(--indigo);">Prison</span> по вскопанным блокам',
+            total_blocks: 'Топ <span style="color: var(--indigo);">Prison</span> по вскопанным блокам',
             kills: 'Топ <span style="color: var(--indigo);">Prison</span> по убийствам',
         },
         prison_season: {
-            total_blocks:
-                'Топ <span style="color: var(--indigo);">Prison Season</span> по вскопанным блокам',
+            total_blocks: 'Топ <span style="color: var(--indigo);">Prison Season</span> по вскопанным блокам',
             kills: 'Топ <span style="color: var(--indigo);">Prison Season</span> по убийствам',
-            earned_money:
-                'Топ <span style="color: var(--indigo);">Prison Season</span> по заработанным деньгам',
+            earned_money: 'Топ <span style="color: var(--indigo);">Prison Season</span> по заработанным деньгам',
         },
         sw: {
             wins: 'Топ <span style="color: var(--indigo);">SkyWars</span> по победам',
@@ -322,21 +317,14 @@ async function getTop(response) {
             kills: 'Топ <span style="color: var(--indigo);">Jump League</span> по убийствам',
         },
         murder: {
-            wins_as_maniac:
-                'Топ <span style="color: var(--indigo);">Murder Mystery</span> по победам за маньяка',
-            total_wins:
-                'Топ <span style="color: var(--indigo);">Murder Mystery</span> по общим победам',
+            wins_as_maniac: 'Топ <span style="color: var(--indigo);">Murder Mystery</span> по победам за маньяка',
+            total_wins: 'Топ <span style="color: var(--indigo);">Murder Mystery</span> по общим победам',
             kills: 'Топ <span style="color: var(--indigo);">Murder Mystery</span> по убийствам',
-        },
-        paintball: {
-            wins: 'Топ <span style="color: var(--indigo);">Paintball</span> по победам',
-            kills: 'Топ <span style="color: var(--indigo);">Paintball</span> по убийствам',
         },
         sheep: {
             wins: 'Топ <span style="color: var(--indigo);">SheepWars</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">SheepWars</span> по убийствам',
-            tamed_sheep:
-                'Топ <span style="color: var(--indigo);">SheepWars</span> по принесенным овечкам',
+            tamed_sheep: 'Топ <span style="color: var(--indigo);">SheepWars</span> по принесенным овечкам',
         },
         tntrun: {
             wins: 'Топ <span style="color: var(--indigo);">TNT Run</span> по победам',
@@ -357,13 +345,15 @@ async function getTop(response) {
             wins: 'Топ <span style="color: var(--indigo);">Speed Builders</span> по победам',
         },
         hide: {
-            total_wins:
-                'Топ <span style="color: var(--indigo);">Hide And Seek</span> по победам',
+            total_wins: 'Топ <span style="color: var(--indigo);">Hide And Seek</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">Hide And Seek</span> по убийствам',
         },
         teamfortress: {
             wins: 'Топ <span style="color: var(--indigo);">Team Fortress</span> по победам',
             kills: 'Топ <span style="color: var(--indigo);">Team Fortress</span> по убийствам',
+        },
+        fallguys: {
+            wins: 'Топ <span style="color: var(--indigo);">Fall Guys</span> по победам',
         },
     };
 
@@ -417,10 +407,9 @@ if (window.outerHeight < 1000) {
 if (width < 1200) {
     document.querySelector('.navbar > .col-md-6').classList.remove('mr-10');
 } else {
-    if (
-        !document
-            .querySelector('.navbar > .col-md-6')
-            .classList.contains('mr-10')
+    if (!document
+        .querySelector('.navbar > .col-md-6')
+        .classList.contains('mr-10')
     )
         document.querySelector('.navbar > .col-md-6').classList.add('mr-10');
 }
@@ -438,13 +427,12 @@ window.onresize = () => {
     if (width < 1200) {
         document.querySelector('.navbar > .col-md-6').classList.remove('mr-10');
     } else {
-        if (
-            !document
-                .querySelector('.navbar > .col-md-6')
-                .classList.contains('mr-10')
+        if (!document
+            .querySelector('.navbar > .col-md-6')
+            .classList.contains('mr-10')
         )
             document
-                .querySelector('.navbar > .col-md-6')
-                .classList.add('mr-10');
+            .querySelector('.navbar > .col-md-6')
+            .classList.add('mr-10');
     }
 };
